@@ -1,8 +1,8 @@
 {
-  "name": "womens-history-month",
+  "name": "summer-fellowship-2022",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://womenshistorymonth2021.columbiadailyspectator.com",
+  "homepage": "https://summerfellowship2022.columbiadailyspectator.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
