@@ -8,9 +8,9 @@ const Articles = styled.div`
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 0rem 5rem 1rem 5rem;
-    margin: 2rem 0rem 2rem 0rem;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-image: url("https://summer-fellowship-2022.s3.amazonaws.com/SectionStrip.png");
+    background-size: cover;
+    padding: 3rem;
 `;
 
 const ArticleCards = ({article1, article2, article3}) => (

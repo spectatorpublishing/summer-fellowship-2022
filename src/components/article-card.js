@@ -76,14 +76,14 @@ const Image = styled.div`
 
 const ArticleCard = ({ article }) => {
     return (
-      <Card> 
-        <a href={article.article_link}>
+        <Card>
+            <a href={article.article_link}>
                 <Image> <img alt='article image' src={article.image_url} /> </Image>
-            <Title>{article.article_title}</Title>
-            <Name>{article.article_authors}</Name>
-        </a>
-      </Card>
+                <Title>{article.article_title}</Title>
+                <Name>{article.article_authors}</Name>
+            </a>
+        </Card>
     );
-  };
+};
 
 export default ArticleCard;

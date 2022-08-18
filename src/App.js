@@ -9,14 +9,26 @@ import { news_articles } from './data/articles';
 import { a_and_e_articles } from './data/articles';
 import { spectrum_articles } from './data/articles';
 import { sports_articles } from './data/articles';
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
+import styled from 'styled-components/macro';
+
+const PageWrapper = styled.div`
+  background-image: url(${props => props.image});
+  background-size: cover;
+`;
+
 
 const App = () => {
   const [currentSection, setSection] = useState("Home");
 
+  useEffect(() => {
+    console.log(currentSection);
+  },[currentSection]);
+
   return (
       <Router basename={process.env.PUBLIC_URL}>
-        <Navbar lightLogo={currentSection == "Home"} setSection={setSection}/>
+        <PageWrapper image={currentSection == "Home" ? "https://summer-fellowship-2022.s3.amazonaws.com/Homebackground.png" : "https://summer-fellowship-2022.s3.amazonaws.com/Section+background.png"}>
+        <Navbar lightLogo={currentSection == "Home"} currentSection={currentSection} setSection={setSection}/>
         <ScrollToTop>
         <Switch>
             <Route exact path='/' component={Home} />
@@ -47,6 +59,7 @@ const App = () => {
             />
         </Switch>
         </ScrollToTop>
+        </PageWrapper>
       </Router>
   );
 }

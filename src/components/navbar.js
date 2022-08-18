@@ -9,142 +9,44 @@ import { IconContext } from 'react-icons/lib';
 import theme from '../theme';
 
 const Wrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 2rem;
     position: sticky;
     top: 0rem;
-    margin: 0rem 0rem 0rem 0rem;
-
-    .react-icons{
-        margin: 2rem 0rem -2rem 0rem;
-
-        @media only screen and (max-width: 1023px){
-            display: none;
-        }
+    margin: 0rem;
+    padding: 1rem 0rem;
+    
+    &.scrolled{
+        transition: all 0.5s ease;
+        background-color: ${theme.colors.blue};
     }
 
-    .menu {
-        display: none;
-
-        @media only screen and (max-width: 1023px){
-            display: block;
-            margin: auto 2rem auto 25rem;
-            font-size: 30px;
-        }
-
-        @media only screen and (max-width: 690px){
-            margin: auto 2rem auto 20rem;
-        }
-
-        @media only screen and (max-width: 609px){
-            margin: auto 2rem auto 15rem;
-        }
-
-        @media only screen and (max-width: 609px){
-            margin: auto 2rem auto 15rem;
-        }
-
-        @media only screen and (max-width: 500px){
-            margin: auto 2rem auto 10rem;
-        }
-
-        @media only screen and (max-width: 425px){
-            margin: auto 2rem auto 7rem;
-        }
-
-        @media only screen and (max-width: 375px){
-            margin: auto 2rem auto 4rem;
-        }
-
-        @media only screen and (max-width: 320px){
-            margin: auto 2rem auto 1rem;
-        }
-        
-    }
-
-    a{
+    a {
         color: black;
         text-decoration: none;
-        margin: 1rem 0.5rem;
-
-        &.active {
-            padding-bottom: 0rem;
-            border: 3px solid ${theme.colors.menuItemSecondary};
-            border-radius: 30rem;
-            background-color: ${theme.colors.menuItemPrimary};
-            transition: all 0.2s ease;
-    
-            @media only screen and (max-width: 1023px){
-                padding: 0.5rem 0rem 0.5rem 0rem;
-                transition: none;
-                background-color: transparent;
-                border: none;
-                color: ${theme.colors.menuItemPrimaryMobile};
-                width: 70vw;
-            }
-    
-            @media only screen and (max-width: 560px){
-                padding: 0.5rem 0rem 0.5rem 0rem;
-            }
-            @media only screen and (max-width: 420px){
-                padding: 0.5rem 0rem 0.5rem 0rem;
-            }
-        }
+        margin: auto 0.5rem;
 
         @media only screen and (max-width: 1023px){
-            margin: 0rem 0rem;
+            margin: auto 0rem;
         }
     }
 
     @media only screen and (max-width: 1023px){
-        padding-bottom: 1rem;
+        padding: 1rem 0.5rem;
     }
 `;
 
-const Row = styled.div`
-    display: flex;
-    flex-direction: row;
-`;
-
-const Nav = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: khula;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 29px;
-    margin: 0rem auto 0rem auto;
-
-    @media only screen and (max-width: 1023px){
-        flex-direction: column;
-    }
-
-    @media only screen and (max-width: 1023px){
-        border-bottom: 0px solid #000000;
-        font-family: Prata;
-        font-size: 18px;
-        line-height: 41px;
-        text-align: center;
-        margin: 0rem auto 0rem auto;
-    }
-`;
-
-const MobileNav = styled.div`
+const MobileMenu = styled.div`
     display: none;
     position: absolute;
     top: 0;
     right: 0;
-    margin: 3.5rem 1rem 1rem 1rem;
+    margin: 4rem 1rem 1rem 1rem;
+    padding: 1rem 0rem;
 
     border-radius: 15px;
         font-family: Prata;
         font-size: 18px;
         line-height: 41px;
         text-align: center;
-        // margin: 0rem auto 0rem auto;
         background-color: ${theme.colors.white};
         opacity: 0.9;
 
@@ -154,27 +56,85 @@ const MobileNav = styled.div`
     }
 `;
 
+const MobileNav = styled.div`
+display: none;
+padding: 0.25rem;
+@media only screen and (max-width: 1023px){
+    display: flex;
+    flex-direction: row;
+}
+`;
+
 const DesktopNav = styled.div`
     display: flex;
 
     @media only screen and (max-width: 1023px){
         display: none;
     }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: khula;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 29px;
+    margin: 0rem auto 0rem auto;
+`;
+
+const MenuIcon = styled.div`
+
+margin-left: auto;
+margin-right:0.5rem;
+display: flex;
+color: ${props => props.color};
+
+.menu {
+    font-size: 30px;
+}
 `;
 
 const Link = styled.div`
     padding: 0.25rem 1.25rem;
-    margin: 0rem auto 0rem auto;
+    margin: 0rem;
+    border: 3px solid transparent;
+
+    &.active {
+        padding-bottom: 0rem;
+        border: 3px solid ${theme.colors.menuItemSecondary};
+        background-color: ${theme.colors.menuItemPrimary};
+        border-radius: 30rem;
+        // transition: all 0.2s ease;
+
+        @media only screen and (max-width: 1023px){
+            padding: 0.5rem 0rem 0.5rem 0rem;
+            // transition: none;
+            background-color: transparent;
+            border: none;
+            color: ${theme.colors.menuItemPrimaryMobile};
+            width: 70vw;
+        }
+
+        @media only screen and (max-width: 560px){
+            padding: 0.5rem 0rem 0.5rem 0rem;
+        }
+        @media only screen and (max-width: 420px){
+            padding: 0.5rem 0rem 0.5rem 0rem;
+        }
+    }
 
     &:hover{
+        // transition: all 0.2s ease;
+        padding-bottom: 0rem;
         border: 3px solid ${theme.colors.menuItemSecondary};
+        background-color: ${theme.colors.menuItemPrimary};
         border-radius: 30rem;
-        transition: all 0.2s ease;
 
         @media only screen and (max-width: 1023px){
             padding-bottom: none;
             border-bottom: 0px solid ${theme.colors.menuItemSecondary};
-            transition: none;
+            // transition: none;
         }
     }
 
@@ -185,7 +145,7 @@ const Link = styled.div`
     @media only screen and (max-width: 1023px){
         padding-bottom: none;
         border-bottom: 0px solid ${theme.colors.menuItemSecondary};
-        transition: none;
+        // transition: none;
         padding: 0rem;
     }
 
@@ -223,9 +183,14 @@ const MenuItems = [
 ]
 
 
-const Navbar = ({ lightLogo, setSection }) => {
+const Navbar = ({ lightLogo, currentSection, setSection }) => {
     const [show, setToggle] = useState(false);
     const [width, setWidth] = useState(window.innerWidth);
+    const [scrollY, setScrollY] = useState(0);
+
+    const handleScroll = () => {
+        setScrollY(window.pageYOffset);
+    }
 
     useEffect(() => {
         window.addEventListener("resize", () => setWidth(window.innerWidth));
@@ -234,44 +199,55 @@ const Navbar = ({ lightLogo, setSection }) => {
         }
     });
 
+    useEffect(() => {
+        function watchScroll() {
+            window.addEventListener("scroll", handleScroll);
+        }
+        watchScroll();
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    });
+
     return (
-        <Wrapper>
-            <Nav>
-                <Row>
-                    <Logo lightLogo={lightLogo} />
+        <Wrapper className={(scrollY > 10) ? "scrolled" : "normal"}>
+            <DesktopNav>
+                <Logo lightLogo={lightLogo} />
+                {MenuItems.map((item) => {
+                    return (
+                        <>
+                            <NavLink to={item.url} exact={item.exact}>
+                                <Link className={currentSection === item.title ? "active" : ""} onClick={() => setSection(item.title)}>
+                                    {item.title}
+                                </Link>
+                            </NavLink>
+                        </>
+                    )
+                })}
+            </DesktopNav>
+            <MobileNav>
+                <Logo lightLogo={lightLogo} />
+                <MenuIcon color={currentSection === "Home"? 'white':'black'}>
                     <IconContext.Provider value={{ className: 'menu' }}>
                         {show ?
                             <MdClose onClick={() => setToggle(!show)} /> : <GiHamburgerMenu onClick={() => setToggle(!show)} />}
                     </IconContext.Provider>
-                </Row>
-                <DesktopNav>
-                    {MenuItems.map((item) => {
-                        return (
-                            <>
-                                <NavLink to={item.url} exact={item.exact} value={{ activeClassName: 'active' }}>
-                                    <Link activeClassName="active" onClick={() => setSection(item.title)}>
+                </MenuIcon>
+            </MobileNav>
+            <MobileMenu>
+                {MenuItems.map((item) => {
+                    return (
+                        <>
+                            {(show) ?
+                                <NavLink to={item.url} exact={item.exact}>
+                                    <Link className={currentSection === item.title ? "active" : ""} onClick={() => { setToggle(!show); setSection(item.title) }}>
                                         {item.title}
                                     </Link>
-                                </NavLink>
-                            </>
-                        )
-                    })}
-                </DesktopNav>
-                <MobileNav>
-                    {MenuItems.map((item) => {
-                        return (
-                            <>
-                                {(show) ?
-                                    <NavLink to={item.url} exact={item.exact} value={{ activeClassName: 'active' }}>
-                                        <Link activeClassName="active" onClick={() => { setToggle(!show); setSection(item.title) }}>
-                                            {item.title}
-                                        </Link>
-                                    </NavLink> : null}
-                            </>
-                        )
-                    })}
-                </MobileNav>
-            </Nav>
+                                </NavLink> : null}
+                        </>
+                    )
+                })}
+            </MobileMenu>
         </Wrapper>
     );
 };

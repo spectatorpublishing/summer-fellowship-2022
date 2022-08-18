@@ -15,13 +15,21 @@ export default Logo;
 
 const Wrapper = styled.a`
     margin: 0rem;
-    padding: 1rem 0rem 0rem 3rem;
+    padding: 0rem 0rem 0rem 3rem;
+    display: block;
+    height: 1.5rem;
+
     img {
-        width: 12rem;
+        height: 1.5rem;
     }
 
-    @media only screen and (max-width: 1070px){
-        padding: 1rem 0rem 0rem 1rem;
-        margin: 0rem 1rem 0rem 1rem;
+    @media only screen and (max-width: 1023px){
+        padding: 0rem 0rem 0rem 1rem;
+        margin: auto 1rem auto 1rem;
+        height: 1.25rem;
+        
+        img {
+            height: 1.25rem;
+        }
     }
 `;

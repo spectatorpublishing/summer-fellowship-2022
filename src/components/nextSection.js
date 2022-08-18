@@ -7,7 +7,8 @@ const Wrapper = styled.div`
     background: transparent;
     display: flex;
     flex-direction: row;
-    margin: 2rem 0rem 2rem 0rem;
+    margin: 2rem 0rem 0rem 0rem;
+    padding-bottom: 2rem;
 
     @media only screen and (max-width: 1160px){
         font-size: 16px;
