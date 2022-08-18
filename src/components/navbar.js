@@ -3,9 +3,10 @@ import styled from 'styled-components/macro';
 import Logo from './logo'
 import { NavLink } from 'react-router-dom';
 import { device } from '../device';
-import  { BsFillDiamondFill } from 'react-icons/bs';
-import  { GiHamburgerMenu } from 'react-icons/gi';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { MdClose } from 'react-icons/md';
 import { IconContext } from 'react-icons/lib';
+import theme from '../theme';
 
 const Wrapper = styled.div`
     display: flex;
@@ -13,7 +14,6 @@ const Wrapper = styled.div`
     padding-bottom: 2rem;
     position: sticky;
     top: 0rem;
-    background-color: #FCF7EC;
     margin: 0rem 0rem 0rem 0rem;
 
     .react-icons{
@@ -66,17 +66,21 @@ const Wrapper = styled.div`
     a{
         color: black;
         text-decoration: none;
+        margin: 1rem 0.5rem;
 
         &.active {
             padding-bottom: 0rem;
-            border-bottom: 3px solid #000000;
+            border: 3px solid ${theme.colors.menuItemSecondary};
+            border-radius: 30rem;
+            background-color: ${theme.colors.menuItemPrimary};
             transition: all 0.2s ease;
     
             @media only screen and (max-width: 1023px){
                 padding: 0.5rem 0rem 0.5rem 0rem;
-                border-bottom: 0px solid #000000;
                 transition: none;
-                background: #FDC089;
+                background-color: transparent;
+                border: none;
+                color: ${theme.colors.menuItemPrimaryMobile};
                 width: 70vw;
             }
     
@@ -86,6 +90,10 @@ const Wrapper = styled.div`
             @media only screen and (max-width: 420px){
                 padding: 0.5rem 0rem 0.5rem 0rem;
             }
+        }
+
+        @media only screen and (max-width: 1023px){
+            margin: 0rem 0rem;
         }
     }
 
@@ -109,7 +117,6 @@ const Nav = styled.div`
     font-size: 18px;
     line-height: 29px;
     margin: 0rem auto 0rem auto;
-    border-bottom: 3px solid #CDCDCD;
 
     @media only screen and (max-width: 1023px){
         flex-direction: column;
@@ -125,32 +132,59 @@ const Nav = styled.div`
     }
 `;
 
+const MobileNav = styled.div`
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3.5rem 1rem 1rem 1rem;
+
+    border-radius: 15px;
+        font-family: Prata;
+        font-size: 18px;
+        line-height: 41px;
+        text-align: center;
+        // margin: 0rem auto 0rem auto;
+        background-color: ${theme.colors.white};
+        opacity: 0.9;
+
+    @media only screen and (max-width: 1023px){
+        display: flex;
+        flex-direction: column;
+    }
+`;
+
+const DesktopNav = styled.div`
+    display: flex;
+
+    @media only screen and (max-width: 1023px){
+        display: none;
+    }
+`;
+
 const Link = styled.div`
-    
-    padding: 1rem 2rem;
+    padding: 0.25rem 1.25rem;
     margin: 0rem auto 0rem auto;
-    border-bottom: 0px solid #CDCDCD;
 
     &:hover{
-        border-bottom: 3px solid #000000;
+        border: 3px solid ${theme.colors.menuItemSecondary};
+        border-radius: 30rem;
         transition: all 0.2s ease;
 
         @media only screen and (max-width: 1023px){
             padding-bottom: none;
-            border-bottom: 0px solid #000000;
+            border-bottom: 0px solid ${theme.colors.menuItemSecondary};
             transition: none;
-            background: #FDC089;
         }
     }
 
-
     @media only screen and (max-width: 1259px){
-        padding: 1rem 1rem;
+        padding: 0.25rem 1rem;
     }
 
     @media only screen and (max-width: 1023px){
         padding-bottom: none;
-        border-bottom: 0px solid #000000;
+        border-bottom: 0px solid ${theme.colors.menuItemSecondary};
         transition: none;
         padding: 0rem;
     }
@@ -189,13 +223,13 @@ const MenuItems = [
 ]
 
 
-const Navbar = () => {
+const Navbar = ({ lightLogo, setSection }) => {
     const [show, setToggle] = useState(false);
     const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         window.addEventListener("resize", () => setWidth(window.innerWidth));
-        if (width > 1023){
+        if (width > 1023) {
             setToggle(true);
         }
     });
@@ -203,30 +237,40 @@ const Navbar = () => {
     return (
         <Wrapper>
             <Nav>
-            <IconContext.Provider value={{ className: 'react-icons' }}>
-                <BsFillDiamondFill/>
-            </IconContext.Provider>
-            <Row>
-            <Logo/>
-            <IconContext.Provider value={{ className: 'menu' }}>
-                <GiHamburgerMenu onClick={() => setToggle(!show)}/>
-            </IconContext.Provider>
-            </Row>
-            {MenuItems.map((item) => {
-                return(
-                    <>
-                    {(show) ? 
-                    <NavLink to={item.url} exact={item.exact} value={{ activeClassName: 'active' }}>
-                        <Link activeClassName="active" onClick={() => setToggle(!show)}>
-                                {item.title}
-                        </Link>
-                    </NavLink> : null}
-                    </>
-                )
-            })}
-            <IconContext.Provider value={{ className: 'react-icons' }}>
-                <BsFillDiamondFill/>
-            </IconContext.Provider>
+                <Row>
+                    <Logo lightLogo={lightLogo} />
+                    <IconContext.Provider value={{ className: 'menu' }}>
+                        {show ?
+                            <MdClose onClick={() => setToggle(!show)} /> : <GiHamburgerMenu onClick={() => setToggle(!show)} />}
+                    </IconContext.Provider>
+                </Row>
+                <DesktopNav>
+                    {MenuItems.map((item) => {
+                        return (
+                            <>
+                                <NavLink to={item.url} exact={item.exact} value={{ activeClassName: 'active' }}>
+                                    <Link activeClassName="active" onClick={() => setSection(item.title)}>
+                                        {item.title}
+                                    </Link>
+                                </NavLink>
+                            </>
+                        )
+                    })}
+                </DesktopNav>
+                <MobileNav>
+                    {MenuItems.map((item) => {
+                        return (
+                            <>
+                                {(show) ?
+                                    <NavLink to={item.url} exact={item.exact} value={{ activeClassName: 'active' }}>
+                                        <Link activeClassName="active" onClick={() => { setToggle(!show); setSection(item.title) }}>
+                                            {item.title}
+                                        </Link>
+                                    </NavLink> : null}
+                            </>
+                        )
+                    })}
+                </MobileNav>
             </Nav>
         </Wrapper>
     );

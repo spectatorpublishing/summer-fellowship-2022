@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import logo from '../assets/spectator-logo.svg';
 
-const Logo = () => {
+const Logo = ({lightLogo}) => {
     return (
             <Wrapper href="https://www.columbiaspectator.com/">
-                <img src="https://cds-archives.s3.amazonaws.com/pb/resources/img/spectator-logo.png" alt="Columbia Spectator Logo"></img>
+                {lightLogo ? <img src="https://spec-imagehosting.s3.amazonaws.com/CDSwhitemasthead.png" alt="Columbia Spectator Logo"></img> :
+                <img src="https://cds-archives.s3.amazonaws.com/pb/resources/img/spectator-logo.png" alt="Columbia Spectator Logo"></img>}
             </Wrapper>
     );
 };

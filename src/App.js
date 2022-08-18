@@ -1,9 +1,7 @@
-import React from 'react';
 import { BrowserRouter as Router, Switch, Route, HashRouter } from 'react-router-dom';
 import Home from './containers/home';
 import Section from './containers/Section';
 import Navbar from './components/navbar';
-// import ArticleTest from './containers/article-test';
 import Credits from './containers/credits';
 import Logo from './components/logo';
 import ScrollToTop from "./components/ScrollToTop";
@@ -11,11 +9,14 @@ import { news_articles } from './data/articles';
 import { a_and_e_articles } from './data/articles';
 import { spectrum_articles } from './data/articles';
 import { sports_articles } from './data/articles';
+import { React, useState } from 'react';
 
 const App = () => {
+  const [currentSection, setSection] = useState("Home");
+
   return (
       <Router basename={process.env.PUBLIC_URL}>
-        <Navbar/>
+        <Navbar lightLogo={currentSection == "Home"} setSection={setSection}/>
         <ScrollToTop>
         <Switch>
             <Route exact path='/' component={Home} />
