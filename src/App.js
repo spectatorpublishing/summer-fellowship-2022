@@ -34,8 +34,6 @@ const App = () => {
   const [currentSection, setSection] = useState("Home");
 
   useEffect(() => {
-    console.log(currentSection);
-    console.log(window.location.pathname);
     const currentPath = window.location.pathname;
 
     var activeSection = sections.find(section => {
@@ -43,7 +41,7 @@ const App = () => {
     })
 
     setSection(activeSection ? activeSection.title : "Home");
-  },[currentSection]);
+  },[]);
 
   return (
       <Router basename={process.env.PUBLIC_URL}>
