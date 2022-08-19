@@ -15,9 +15,14 @@ const Wrapper = styled.div`
     padding: 1rem 0rem;
     z-index: 99;
     
-    &.scrolled{
+    &.scrolledHome{
         transition: all 0.5s ease;
         background-color: ${theme.colors.blue};
+    }
+
+    &.scrolledSection{
+        transition: all 0.5s ease;
+        background-color: ${theme.colors.lightBlue};
     }
 
     a {
@@ -211,7 +216,7 @@ const Navbar = ({ lightLogo, currentSection, setSection }) => {
     });
 
     return (
-        <Wrapper className={(scrollY > 10) ? "scrolled" : "normal"}>
+        <Wrapper className={[((scrollY > 10) && currentSection === "Home") ? "scrolledHome" : (((scrollY > 10) && currentSection !== "Home") ? "scrolledSection" : "normal")]}>
             <DesktopNav>
                 <Logo lightLogo={lightLogo} />
                 {MenuItems.map((item) => {

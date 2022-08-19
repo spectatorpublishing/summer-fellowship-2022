@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import theme from '../theme';
 
 const Card = styled.div`
     display: flex;
@@ -39,8 +40,11 @@ const Card = styled.div`
 `;
 
 const Title = styled.div`
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     margin: 0 1.25rem 0 1.25rem;
+    color: ${theme.colors.articleTitleBlue};
+    font-family: 'Bitter', serif;
+    font-weight: 500;
 `;
 
 const Name = styled.div`
@@ -56,7 +60,7 @@ const Name = styled.div`
 `;
 
 const Image = styled.div`
-    background-color: #FDC089;
+    background-color: ${theme.colors.blue};
     margin: 1.25rem;
     width: 20rem;
     height: 12.5rem;
