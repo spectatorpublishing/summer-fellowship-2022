@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
@@ -7,8 +7,12 @@ const Wrapper = styled.div`
     background: transparent;
     display: flex;
     flex-direction: row;
-    margin: 2rem 0rem 0rem 0rem;
+    margin: 2rem 0rem 0rem auto;
     padding-bottom: 2rem;
+
+    a {
+        margin-left: auto;
+    }
 
     @media only screen and (max-width: 1160px){
         font-size: 16px;
@@ -16,43 +20,19 @@ const Wrapper = styled.div`
     }
 `
 
-const Image = styled.div`
-    background-image: url("https://womenshistorymonth2021.s3.amazonaws.com/File_005.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 40rem;
-    height: 20rem;
-    margin: 0rem auto 0rem 5rem;
-
-    @media only screen and (max-width: 1470px){
-        width: 30rem;
-        height: 20rem;
-        margin: 0rem 5rem 0rem 5rem;
-    }
-    
-    @media only screen and (max-width: 1272px){
-        width: 30rem;
-        height: 20rem;
-        margin: 0rem;
-    }
-    
-    @media only screen and (max-width: 1160px){
-        background-image: none;
-        width: 0rem;
-        height: 0rem;
-    }
-`;
-
 const Body = styled.div`
     border: none;
     display: flex;
     align-items: center;
-    margin-left: auto;
     padding-left:2rem;
 
     :hover{
         background: rgba(255, 255, 255, 0.75);
+    }
+
+    @media only screen and (max-width: 750px){
+        background: rgba(255, 255, 255, 0.75);
+        margin-left: 1rem;
     }
 `
 
@@ -71,10 +51,14 @@ const TextBox = styled.div`
 `
 
 const NextText = styled.div`
-    font-family: Prata;
+    font-family: 'Nothing You Could Do';
     display: flex;
     text-align: right;
-    text-transform: uppercase;
+    font-size: 30px;
+
+    @media only screen and (max-width: 750px){
+        font-size: 20px;
+    }
 `
 
 const Begin = styled.div`
@@ -102,7 +86,6 @@ const Photo = styled.img`
 
 const NextSection = ( {nextseclink, nextsec, image} ) => ( //add image prop if needed, currently calling from file
     <Wrapper>
-        <Image/>
         <Link to={nextseclink} style={{ textDecoration: 'none' }}>
         <Body>
             <TextBox>
