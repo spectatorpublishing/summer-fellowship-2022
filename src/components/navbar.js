@@ -7,6 +7,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
 import { IconContext } from 'react-icons/lib';
 import theme from '../theme';
+import { sections } from '../data/sections';
 
 const Wrapper = styled.div`
     position: sticky;
@@ -49,12 +50,12 @@ const MobileMenu = styled.div`
     padding: 1rem 0rem;
 
     border-radius: 15px;
-        font-family: Prata;
-        font-size: 18px;
-        line-height: 41px;
-        text-align: center;
-        background-color: ${theme.colors.white};
-        opacity: 0.9;
+    font-family: Prata;
+    font-size: 18px;
+    line-height: 41px;
+    text-align: center;
+    background-color: ${theme.colors.white};
+    opacity: 0.9;
 
     @media only screen and (max-width: 1023px){
         display: flex;
@@ -160,35 +161,6 @@ const Link = styled.div`
     }
 `;
 
-const MenuItems = [
-    {
-        title: "Home",
-        url: "/",
-        exact: true,
-    },
-    {
-        title: "News",
-        url: "/news",
-    },
-    {
-        title: "Arts & Entertainment",
-        url: "/a&e",
-    },
-    {
-        title: "Sports",
-        url: "/sports",
-    },
-    {
-        title: "Spectrum",
-        url: "/spectrum",
-    },
-    {
-        title: "Credits",
-        url: "/credits",
-    },
-]
-
-
 const Navbar = ({ lightLogo, currentSection, setSection }) => {
     const [show, setToggle] = useState(false);
     const [width, setWidth] = useState(window.innerWidth);
@@ -219,7 +191,7 @@ const Navbar = ({ lightLogo, currentSection, setSection }) => {
         <Wrapper className={[((scrollY > 10) && currentSection === "Home") ? "scrolledHome" : (((scrollY > 10) && currentSection !== "Home") ? "scrolledSection" : "normal")]}>
             <DesktopNav>
                 <Logo lightLogo={lightLogo} />
-                {MenuItems.map((item) => {
+                {sections.map((item) => {
                     return (
                         <>
                             <NavLink to={item.url} exact={item.exact}>
@@ -241,7 +213,7 @@ const Navbar = ({ lightLogo, currentSection, setSection }) => {
                 </MenuIcon>
             </MobileNav>
             <MobileMenu>
-                {MenuItems.map((item) => {
+                {sections.map((item) => {
                     return (
                         <>
                             {(show) ?
