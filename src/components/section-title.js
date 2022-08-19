@@ -25,6 +25,7 @@ const Title = styled.div`
     left: 0;
     font-weight: 400;
     font-size: 4rem;
+    font-family: 'EB Garamond', serif;
     padding: 5rem 1.25rem 0 8.75rem;
     color: ${theme.colors.darkBlue};
 

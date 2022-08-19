@@ -1,21 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import theme from '../theme';
 
 const Card = styled.div`
     display: flex;
     flex-direction: column;    
     font-weight: 400;
-    margin: 1rem;
-
-    @media only screen and (max-width: 600px) {
-        width: 20rem;
-        margin: 1rem;
-    }
+    margin: 1rem 1rem auto 1rem;
+    cursor: pointer;
+    flex: 1;
     
-    @media only screen and (min-width: 601px) {
-        height: 22.5rem;
-        width: 22.5rem;
+    :hover{
+        img{
+            opacity: 30%;
+        }
     }
 
     a {
@@ -23,14 +21,12 @@ const Card = styled.div`
         color: black;
     }
 
-    cursor: pointer;
-    :hover{
-        img{
-            opacity: 30%;
-        }
-    }
-
     @media only screen and (max-width: 768px) {
+        background-color: rgba(255, 255, 255, .5);
+        display: block;
+        margin: 1rem 2rem;
+        padding: 0.5rem;
+
         :hover{
             img{
                 opacity: 100%;
@@ -61,20 +57,24 @@ const Name = styled.div`
 
 const Image = styled.div`
     background-color: ${theme.colors.blue};
-    margin: 1.25rem;
-    width: 20rem;
-    height: 12.5rem;
+    margin: 1.25rem auto;
+    width: 90%;
     overflow: hidden;
+    display: flex;
 
     img {
         max-width: 100%;
         margin: auto;
-        object-fit: contain;
+        object-fit: cover;
     }
 
-    @media only screen and (max-width: 600px) {
-        max-width: 18rem;
-        max-height: 11.25rem;
+    @media only screen and (max-width: 768px) {
+        margin: 1.25rem auto;
+        width: 90%;
+
+        img {
+            object-fit: cover;
+        }
     }
 `;
 
