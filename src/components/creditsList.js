@@ -77,27 +77,6 @@ const Title = styled.div`
     text-transform: uppercase;
     text-align: center;
     margin: 0rem 5rem 0rem 5rem;
-    
-    :first-letter{
-        font-family: Playfair Display;
-        font-size: 6rem;
-        font-style: italic;
-        font-weight: 700;
-        color: #FDC089;
-        text-transform: uppercase;
-        margin: auto -1.2rem auto auto;
-        vertical-align: sub;
-
-        @media only screen and (max-width: 750px) {
-            font-size: 58px;
-            margin: auto 0rem auto auto;
-        }
-
-        @media only screen and (max-width: 425px) {
-            font-size: 40px;
-            margin: auto -0.5rem auto auto;
-        }
-    }
 
     @media only screen and (max-width: 750px) {
         text-align: center;
@@ -112,11 +91,6 @@ const Title = styled.div`
     }
 `;
 
-const ClipArt = styled.img`
-    height: 20rem;
-    width: auto;
-`;
-
 const CreditsList = () => {
     const [width, setWidth] = useState(window.innerWidth);
 
@@ -127,7 +101,7 @@ const CreditsList = () => {
     if (width < 801){
         return (
             <Wrapper>
-                <Title>The Columbia Daily Spectator staff who made this issue possible</Title>
+                <Title>Credits</Title>
                 <Text>
                     <Column>
                         <SubDiv>
@@ -149,9 +123,6 @@ const CreditsList = () => {
                         <SubDiv>
                             <h2>Lead Illustration By</h2>
                             <p>Tina Wang, Staff Illustrator</p>
-                        </SubDiv>
-                        <SubDiv>
-                            <ClipArt src="https://womenshistorymonth2021.s3.amazonaws.com/File_003(1).png" />
                         </SubDiv>
                         <SubDiv>
                                 <h2>News</h2>
@@ -214,9 +185,6 @@ const CreditsList = () => {
                                 <p>Ashley Jiao, Deputy Illustrations Editor</p>
                                 <p>Carlos Ochoa, Deputy Illustrations Editor</p>
                                 <p>Tina Wang, Staff Illustrator</p>
-                        </SubDiv>
-                        <SubDiv>
-                            <ClipArt src="https://womenshistorymonth2021.s3.amazonaws.com/File_001(1).png" />
                         </SubDiv>
                         <SubDiv>
                                 <h2>Spectrum</h2>
@@ -302,9 +270,6 @@ const CreditsList = () => {
                                 <p>Victoria Irizarry</p>
                         </SubDiv>
                         <SubDiv>
-                            <ClipArt src="https://womenshistorymonth2021.s3.amazonaws.com/File_003(1).png" />
-                        </SubDiv>
-                        <SubDiv>
                                 <h2>Graphics</h2>
                                 <p>Jessica Li, Graphics Editor</p>
                                 <p>Andrew Park</p>
@@ -392,9 +357,6 @@ const CreditsList = () => {
                                 <p>Emma Snoddy</p>
                         </SubDiv>
                         <SubDiv>
-                            <ClipArt src="https://womenshistorymonth2021.s3.amazonaws.com/File_001(1).png" />
-                        </SubDiv>
-                        <SubDiv>
                                 <h2>Illustrations</h2>
                                 <p>Brenda Huang, Illustrations Editor</p>
                                 <p>Liza Evseeva, Deputy Illustrations Editor</p>
@@ -469,9 +431,6 @@ const CreditsList = () => {
                                 <h2>The Eye</h2>
                                 <p>Jade Justice, Features Editor</p>
                         </SubDiv>
-                        <SubDiv>
-                            <ClipArt src="https://womenshistorymonth2021.s3.amazonaws.com/File_003(1).png" />
-                        </SubDiv>
                     </Column>
                     <Column>
                         <SubDiv>
@@ -493,9 +452,6 @@ const CreditsList = () => {
                                 <p>Julia Tong</p>
                                 <p>Noah Bullwinkle</p>
                                 <p>Victoria Irizarry</p>
-                        </SubDiv>
-                        <SubDiv>
-                            <ClipArt src="https://womenshistorymonth2021.s3.amazonaws.com/File_001(1).png" />
                         </SubDiv>
                         <SubDiv>
                                 <h2>Sports</h2>
