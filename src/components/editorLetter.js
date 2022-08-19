@@ -4,7 +4,7 @@ import theme from '../theme';
 
 const Letter = () => (
     <Wrapper>
-        <Title>LETTER FROM THE EDITOR</Title>
+        <Title>Letter From The Editor</Title>
         <Text>
             <p>Dear readers, </p>
             <p>Every March, we focus on the experiences and achievements of women around the world in honor of Women’s History Month. Discussions around the historical gender disparities at Columbia are often cut off either in 1981, when Columbia College made the decision to allow women to enroll, or in 1983, when the first women actually matriculated. However, this edition is a reminder that the struggle for equality did not end when women could attend Columbia College—it continues to this day.</p>
@@ -45,8 +45,9 @@ const Wrapper = styled.div`
     }`;
 
 const Title = styled.div`
-    font-family: Prata;
-    font-size: 2.25rem;
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 2.75rem;
     margin-top: auto;
     margin-bottom: auto;
 
@@ -68,9 +69,8 @@ const Text = styled.div`
 
 const Signature = styled.div`
     .name {
-        font-family: Prata;
+        font-family: 'Nothing You Could Do';
         font-size: 1.625rem;
-        text-transform: uppercase;
 
         @media only screen and (max-width: 768px){
             font-size: 1.125rem;
