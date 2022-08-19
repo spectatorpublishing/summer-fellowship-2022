@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const Wrapper = styled.div`
     border: none;
@@ -86,7 +87,7 @@ const Photo = styled.img`
 
 const NextSection = ( {nextseclink, nextsec, image} ) => ( //add image prop if needed, currently calling from file
     <Wrapper>
-        <Link to={nextseclink} style={{ textDecoration: 'none' }}>
+        <HashLink to={nextseclink} style={{ textDecoration: 'none' }}>
         <Body>
             <TextBox>
                 <NextText>{nextsec}</NextText>
@@ -96,7 +97,7 @@ const NextSection = ( {nextseclink, nextsec, image} ) => ( //add image prop if n
                 <Photo src="https://womenshistorymonth2021.s3.amazonaws.com/New+3_5.PNG" />
             </Img>
         </Body>
-        </Link>
+        </HashLink>
     </Wrapper>
 );
 

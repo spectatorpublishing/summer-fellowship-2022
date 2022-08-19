@@ -70,27 +70,6 @@ const SubDiv = styled.div`
     }
 `;
 
-const Title = styled.div`
-    align-items:center;
-    font-family: Prata;
-    font-size: 2.25rem;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 0rem 5rem 0rem 5rem;
-
-    @media only screen and (max-width: 750px) {
-        text-align: center;
-        margin: 1rem 0rem 2rem 0rem;
-        font-size: 25px;
-    }
-
-    @media only screen and (max-width: 425px) {
-        text-align: center;
-        margin: 1rem 0rem 2rem 0rem;
-        font-size: 20px;
-    }
-`;
-
 const CreditsList = () => {
     const [width, setWidth] = useState(window.innerWidth);
 
@@ -101,7 +80,6 @@ const CreditsList = () => {
     if (width < 801){
         return (
             <Wrapper>
-                <Title>Credits</Title>
                 <Text>
                     <Column>
                         <SubDiv>
@@ -241,7 +219,6 @@ const CreditsList = () => {
     } else if (width > 800 && width < 1050){
         return (
             <Wrapper>
-                <Title>The Columbia Daily Spectator staff who made this issue possible</Title>
                 <Text>
                     <Direction>
                     <Column>
@@ -385,7 +362,6 @@ const CreditsList = () => {
     } else {
         return (
             <Wrapper>
-                <Title>The Columbia Daily Spectator staff who made this issue possible</Title>
                 <Text>
                     <Direction>
                     <Column>

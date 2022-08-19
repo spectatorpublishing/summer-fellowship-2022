@@ -6,7 +6,8 @@ import ArticleCards from '../components/articleCards';
 import NextSection from '../components/nextSection';
 import ArticleCard from '../components/article-card';
 
-const Section = ({articles, header, next, nextLink}) => {
+const Section = ({articles, header, next, nextLink, setSection}) => {
+
     return(
         <main>
         <SectionTitle title={header}/>
@@ -49,7 +50,7 @@ const Section = ({articles, header, next, nextLink}) => {
                 <ArticleCard article={article} />
             ))}
         </Mobile>
-        <NextSection nextseclink={nextLink} nextsec={next} image="https://patch.com/img/cdn20/users/23306266/20200814/041504/styles/patch_image/public/columbia-university-building___14161440408.jpg"></NextSection>
+        <NextSection onClick={() => next === "Credits" ? setSection("Home") : setSection(next)} nextseclink={nextLink} nextsec={next} image="https://patch.com/img/cdn20/users/23306266/20200814/041504/styles/patch_image/public/columbia-university-building___14161440408.jpg"></NextSection>
         </main>
     );
 };

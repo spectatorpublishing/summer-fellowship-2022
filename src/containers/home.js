@@ -8,22 +8,47 @@ import Banner from '../components/titleBanner';
 import Credits from './credits';
 
 const HomeContainer = styled.div`
-
+    margin-bottom: 5rem;
 `;
 
-const Home = ({creditsRef, goToCredits}) => {
+const CreditsTitle = styled.div`
+    align-items:center;
+    font-family: Prata;
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0rem 5rem 0rem 5rem;
+
+    @media only screen and (max-width: 750px) {
+        text-align: center;
+        margin: 1rem 0rem 2rem 0rem;
+        font-size: 25px;
+    }
+
+    @media only screen and (max-width: 425px) {
+        text-align: center;
+        margin: 1rem 0rem 2rem 0rem;
+        font-size: 20px;
+    }
+`;
+
+const Padding = styled.div`
+    margin: 3rem;
+`
+
+const Home = () => {
 
     return (
-        <HomeContainer>
-            <button onClick={goToCredits}>scroll To Credits</button>
-            <Banner />
-            <Letter />
-            <NextSection nextseclink='/news' nextsec='News' image={image}></NextSection>
-            <div ref={creditsRef}>
-                <Credits />
-            </div>
-            
-        </HomeContainer>
+        <>
+            <HomeContainer>
+                <Banner />
+                <Letter />
+                <NextSection nextseclink='/news' nextsec='News' image={image}></NextSection>
+            </HomeContainer>
+            <Padding id="credits"/>
+            <CreditsTitle>Credits</CreditsTitle>
+            <Credits />
+        </>
     )
 };
 

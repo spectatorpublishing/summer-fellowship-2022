@@ -8,6 +8,8 @@ import { MdClose } from 'react-icons/md';
 import { IconContext } from 'react-icons/lib';
 import theme from '../theme';
 import { sections } from '../data/sections';
+import { HashLink } from 'react-router-hash-link';
+import { NavHashLink } from 'react-router-hash-link';
 
 const Wrapper = styled.div`
     position: sticky;
@@ -161,7 +163,7 @@ const Link = styled.div`
     }
 `;
 
-const Navbar = ({ lightLogo, currentSection, setSection, goToCredits }) => {
+const Navbar = ({ lightLogo, currentSection, setSection }) => {
     const [show, setToggle] = useState(false);
     const [width, setWidth] = useState(window.innerWidth);
     const [scrollY, setScrollY] = useState(0);
@@ -189,13 +191,12 @@ const Navbar = ({ lightLogo, currentSection, setSection, goToCredits }) => {
 
     const handleMenuItemOnClick = (newSection) => {
         if (newSection.title === "Credits") {
-            goToCredits();
             setSection("Home");
         } else {
             setSection(newSection.title);
         }
-        
-        setToggle(!show); 
+
+        setToggle(!show);
     }
 
     return (
@@ -205,18 +206,19 @@ const Navbar = ({ lightLogo, currentSection, setSection, goToCredits }) => {
                 {sections.map((item) => {
                     return (
                         <>
-                            <NavLink to={item.url} exact={item.exact}>
-                                <Link className={currentSection === item.title ? "active" : ""} onClick={() => handleMenuItemOnClick(item)}>
-                                    {item.title}
-                                </Link>
-                            </NavLink>
+                            {(show) ?
+                                <NavHashLink smooth to={item.url} exact={item.exact}>
+                                    <Link className={currentSection === item.title ? "active" : ""} onClick={() => handleMenuItemOnClick(item)}>
+                                        {item.title}
+                                    </Link>
+                                </NavHashLink> : null}
                         </>
                     )
                 })}
             </DesktopNav>
             <MobileNav>
                 <Logo lightLogo={lightLogo} />
-                <MenuIcon color={currentSection === "Home"? 'white':'black'}>
+                <MenuIcon color={currentSection === "Home" ? 'white' : 'black'}>
                     <IconContext.Provider value={{ className: 'menu' }}>
                         {show ?
                             <MdClose onClick={() => setToggle(!show)} /> : <GiHamburgerMenu onClick={() => setToggle(!show)} />}
@@ -228,11 +230,11 @@ const Navbar = ({ lightLogo, currentSection, setSection, goToCredits }) => {
                     return (
                         <>
                             {(show) ?
-                                <NavLink to={item.url} exact={item.exact}>
+                                <NavHashLink smooth to={item.url} exact={item.exact}>
                                     <Link className={currentSection === item.title ? "active" : ""} onClick={() => handleMenuItemOnClick(item)}>
                                         {item.title}
                                     </Link>
-                                </NavLink> : null}
+                                </NavHashLink> : null}
                         </>
                     )
                 })}
