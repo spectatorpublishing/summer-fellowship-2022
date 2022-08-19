@@ -1,15 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const Banner = () => (
     <Wrapper>
         <Section className='left'>
-            <Row className='left'><Text className='left'>40 years</Text></Row>
-            <Row className='left'><Text className='left'>of</Text></Row>
+            <Row className='left'><Text className='left'>SSFP</Text></Row>
         </Section>
         <Section className='right'>
-            <Row className='right'><Text className='right'>women at</Text></Row>
-            <Row className='right'><Text className='right'>Columbia</Text></Row>
+            <Row className='right'><Text className='right'>Spectator Summer</Text></Row>
+            <Row className='right'><Text className='right'>Fellowship Program</Text></Row>
         </Section>
     </Wrapper>
 );
@@ -26,8 +25,9 @@ const Wrapper = styled.div`
     top: 0;
 
     @media only screen and (max-width: 768px) {
-        height: 40rem;
-        padding: 3rem 0rem 5rem 0rem;
+        height: 30rem;
+        padding: 0rem 0rem 5rem 0rem;
+        margin: 1.2rem;
         background-image: url("https://womenshistorymonth2021.s3.amazonaws.com/3_5.png");
     }
 
@@ -41,6 +41,14 @@ const Section = styled.div`
     display: flex;
     flex-direction: column;
 
+    &.right{
+        margin-top: 15rem;
+    }
+
+    &.left{
+        margin-bottom: 10rem;
+    }
+
     @media only screen and (max-width: 768px) {
 
         &.right{
@@ -48,20 +56,20 @@ const Section = styled.div`
         }
 
         &.left{
-            margin-bottom: 10rem;
+            margin-bottom: 0rem;
         }
     }
 
     @media only screen and (max-width: 570px) {
 
         &.right{
-            margin-top: 10rem;
+            margin-top: 20rem;
             margin-bottom: 5rem;
         }
 
         &.left{
+            margin-top: 0rem;
             margin-bottom: 10rem;
-            margin-top: 5rem;
         }
     }
 
@@ -74,23 +82,23 @@ const Section = styled.div`
 
         &.left{
             margin-bottom: 0rem;
-            margin-top: 0rem;
         }
     }
 `;
 
 const Text = styled.div`
     font-family: Prata;
-    font-size: 64px;
     text-transform: uppercase;
     color: #000000;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    transform: rotate(-10deg);
 
     &.left{
         text-align: right;
         margin-left: auto;
         margin-right: 1.5rem;
+        font-size: 64px;
     }
 
     &.right{
@@ -98,46 +106,85 @@ const Text = styled.div`
         text-align: left;
         margin-right: auto;
         margin-left: 1.5rem;
+        font-size: 30px;
     }
 
     @media only screen and (max-width: 768px) {
-        font-size: 40px;
+        &.left{
+            font-size: 50px;
+        }
+    
+        &.right{
+            font-size: 30px;
+        }
+    }
+
+    @media only screen and (max-width: 570px) {
+        &.left{
+            font-size: 45px;
+        }
+    
+        &.right{
+            font-size: 25px;
+        }
     }
 
     @media only screen and (max-width: 430px) {
-        font-size: 24px;
         margin-top: 0.2rem;
         margin-bottom: 0rem;
 
         &.left{
             margin-right: 1rem;
+            font-size: 40px;
         }
     
         &.right{
             margin-left: 1rem;
+            font-size: 20px;
         }
     }
 `;
 
 const Row = styled.div`
-    margin-bottom: 11px; 
-    background: #FDC089;
-    width: 30rem;
-
     &.left{
         margin-right: auto;
+        width: 20rem;
+        margin-bottom: 11px; 
     }
 
     &.right{
         margin-left: auto;
+        width: 30rem;
+        margin-bottom: 5px; 
     }
 
     @media only screen and (max-width: 768px) {
-        width: 20rem;
+        &.left{
+            width: 10rem;
+        }
+    
+        &.right{
+            width: 26rem;
+        }
+    }
+
+    @media only screen and (max-width: 570px) {
+        &.left{
+            width: 8rem;
+        }
+    
+        &.right{
+            width: 22rem;
+        }
     }
 
     @media only screen and (max-width: 430px) {
-        width: 12rem;
-        margin-bottom: 5px;
+        &.left{
+            width: 6rem;
+        }
+    
+        &.right{
+            width: 18rem;
+        }
     }
 `;

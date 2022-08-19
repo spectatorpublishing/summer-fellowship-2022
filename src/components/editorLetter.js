@@ -44,24 +44,8 @@ const Title = styled.div`
     margin-top: auto;
     margin-bottom: auto;
 
-    ::first-letter{
-        font-family: Playfair Display;
-        font-size: 6rem;
-        font-style: italic;
-        font-weight: 700;
-        color: #FDC089;
-        margin: auto -1.5rem auto auto;
-        vertical-align: -1rem;
-    }
-
     @media only screen and (max-width: 768px){
         font-size: 1.188rem;
-
-        ::first-letter{
-            font-size: 5rem;
-            margin: auto -0.75rem auto auto;
-            vertical-align: -1.5rem;
-        }
     }
 `;
 

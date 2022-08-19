@@ -13,6 +13,7 @@ const Wrapper = styled.div`
     top: 0rem;
     margin: 0rem;
     padding: 1rem 0rem;
+    z-index: 99;
     
     &.scrolled{
         transition: all 0.5s ease;
