@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import theme from '../theme';
 
 const Banner = () => (
     <Wrapper>
@@ -87,9 +88,9 @@ const Section = styled.div`
 `;
 
 const Text = styled.div`
-    font-family: Prata;
-    text-transform: uppercase;
-    color: #000000;
+    font-family: 'Nothing You Could Do';
+    font-weight: 800;
+    color: ${theme.colors.white};
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     transform: rotate(-10deg);
@@ -106,7 +107,7 @@ const Text = styled.div`
         text-align: left;
         margin-right: auto;
         margin-left: 1.5rem;
-        font-size: 30px;
+        font-size: 50px;
     }
 
     @media only screen and (max-width: 768px) {
@@ -115,7 +116,7 @@ const Text = styled.div`
         }
     
         &.right{
-            font-size: 30px;
+            font-size: 40px;
         }
     }
 
@@ -125,7 +126,7 @@ const Text = styled.div`
         }
     
         &.right{
-            font-size: 25px;
+            font-size: 35px;
         }
     }
 
@@ -140,7 +141,7 @@ const Text = styled.div`
     
         &.right{
             margin-left: 1rem;
-            font-size: 20px;
+            font-size: 30px;
         }
     }
 `;
@@ -154,7 +155,7 @@ const Row = styled.div`
 
     &.right{
         margin-left: auto;
-        width: 30rem;
+        width: 35rem;
         margin-bottom: 5px; 
     }
 

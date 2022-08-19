@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import theme from '../theme';
 
 const Letter = () => (
     <Wrapper>
@@ -23,8 +24,10 @@ export default Letter;
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 2rem 2rem 0rem 2rem;
+    margin: 5rem 2rem 0rem 2rem;
     padding: 2rem 8rem 0rem 8rem;
+    color: ${theme.colors.white};
+
     @media only screen and (max-width: 1200px){
         padding: 2rem 6rem 0rem 6rem;
     }
@@ -33,6 +36,9 @@ const Wrapper = styled.div`
     }
     @media only screen and (max-width: 768px){
         padding: 2rem 1rem 0rem 1rem;
+    }
+    @media only screen and (max-width: 570px) {
+        margin: 2rem 2rem 0rem 2rem;
     }
     @media only screen and (max-width: 400px){
         padding: 0;
