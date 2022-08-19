@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import Home from './containers/home';
 import Section from './containers/Section';
 import Navbar from './components/navbar';
@@ -12,6 +13,7 @@ import { sports_articles } from './data/articles';
 import { React, useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import { sections } from './data/sections';
+import { useRef } from "react";
 
 const PageWrapper = styled.div`
   &.home {
@@ -32,6 +34,8 @@ const PageWrapper = styled.div`
 
 const App = () => {
   const [currentSection, setSection] = useState("Home");
+  const credits = useRef();
+  const history = useHistory();
 
   useEffect(() => {
     const currentPath = window.location.pathname;
@@ -43,14 +47,20 @@ const App = () => {
     setSection(activeSection ? activeSection.title : "Home");
   },[]);
 
+  const goToCredits = () => {
+    credits.current?.scrollIntoView({behavior: 'smooth'});
+  };
+
   return (
       <Router basename={process.env.PUBLIC_URL}>
         <PageWrapper className={window.location.pathname == "/" ? "home" : "section"}>
-        <Navbar lightLogo={currentSection == "Home"} currentSection={currentSection} setSection={setSection}/>
+        <Navbar lightLogo={currentSection == "Home"} currentSection={currentSection} setSection={setSection} goToCredits={goToCredits}/>
         <ScrollToTop>
         <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/credits' component={Credits} />
+            <Route exact path='/'
+              render={(props) => (
+                <Home {...props} creditsRef={credits} goToCredits={goToCredits}/>
+              )}/>
             <Route
               exact path='/news'
               render={(props) => (
@@ -72,7 +82,7 @@ const App = () => {
             <Route
               exact path='/spectrum'
               render={(props) => (
-                <Section {...props} articles={spectrum_articles} header='Spectrum' next='Credits' nextLink='/credits'/>
+                <Section {...props} articles={spectrum_articles} header='Spectrum' next='Credits' nextLink='/'/>
               )}
             />
         </Switch>

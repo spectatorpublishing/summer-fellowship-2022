@@ -161,7 +161,7 @@ const Link = styled.div`
     }
 `;
 
-const Navbar = ({ lightLogo, currentSection, setSection }) => {
+const Navbar = ({ lightLogo, currentSection, setSection, goToCredits }) => {
     const [show, setToggle] = useState(false);
     const [width, setWidth] = useState(window.innerWidth);
     const [scrollY, setScrollY] = useState(0);
@@ -187,6 +187,17 @@ const Navbar = ({ lightLogo, currentSection, setSection }) => {
         };
     });
 
+    const handleMenuItemOnClick = (newSection) => {
+        if (newSection.title === "Credits") {
+            goToCredits();
+            setSection("Home");
+        } else {
+            setSection(newSection.title);
+        }
+        
+        setToggle(!show); 
+    }
+
     return (
         <Wrapper className={[((scrollY > 10) && currentSection === "Home") ? "scrolledHome" : (((scrollY > 10) && currentSection !== "Home") ? "scrolledSection" : "normal")]}>
             <DesktopNav>
@@ -195,7 +206,7 @@ const Navbar = ({ lightLogo, currentSection, setSection }) => {
                     return (
                         <>
                             <NavLink to={item.url} exact={item.exact}>
-                                <Link className={currentSection === item.title ? "active" : ""} onClick={() => setSection(item.title)}>
+                                <Link className={currentSection === item.title ? "active" : ""} onClick={() => handleMenuItemOnClick(item)}>
                                     {item.title}
                                 </Link>
                             </NavLink>
@@ -218,7 +229,7 @@ const Navbar = ({ lightLogo, currentSection, setSection }) => {
                         <>
                             {(show) ?
                                 <NavLink to={item.url} exact={item.exact}>
-                                    <Link className={currentSection === item.title ? "active" : ""} onClick={() => { setToggle(!show); setSection(item.title) }}>
+                                    <Link className={currentSection === item.title ? "active" : ""} onClick={() => handleMenuItemOnClick(item)}>
                                         {item.title}
                                     </Link>
                                 </NavLink> : null}
