@@ -5,8 +5,12 @@ export const sections = [
         exact: true,
     },
     {
-        title: "News",
-        url: "/news",
+        title: "University News",
+        url: "/uni-news",
+    },
+    {
+        title: "City News",
+        url: "/city-news",
     },
     {
         title: "Arts & Entertainment",
@@ -17,8 +21,12 @@ export const sections = [
         url: "/sports",
     },
     {
-        title: "Spectrum",
-        url: "/spectrum",
+        title: "Opinion",
+        url: "/opinion",
+    },
+    {
+        title: "The Eye",
+        url: "/eye",
     },
     {
         title: "Credits",

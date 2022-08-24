@@ -1,4 +1,61 @@
-export const news_articles = [
+export const city_news_articles = [
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/DKLQKFAXQZDNFBGI4RVMFMTB7Y.jpg",
+        article_title: " 175 women alleged sexual abuse against a Columbia gynecologist. Five years after his conviction, they’re still fighting to be heard.",
+        article_authors: "Kathy Fang and Elizabeth Karpen",
+        article_link: "https://www.columbiaspectator.com/news/2021/03/26/175-women-alleged-sexual-abuse-against-a-columbia-gynecologist-five-years-after-his-conviction-theyre-still-fighting-to-be-heard/"
+    },
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/Y3DAGUG3IBGG7FMRYIYZN6C7SA.jpg",
+        article_title: "Union members advocate for childcare benefits as the pandemic continues to disproportionately affect female faculty",
+        article_authors: "Ashley Yung",
+        article_link: "https://www.columbiaspectator.com/news/2021/03/17/union-members-advocate-for-childcare-benefits-as-the-pandemic-continues-to-disproportionately-affect-female-faculty/"
+    },
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/EQNCYXBEEJBYNABPDAVDQGHCBY.jpg",
+        article_title: "Columbia student’s city council campaign aims to open the door for students, community members to engage in local politics",
+        article_authors: "Kathy Fang",
+        article_link: "https://www.columbiaspectator.com/news/2020/11/04/columbia-students-city-council-campaign-aims-to-open-the-door-for-students-community-members-to-engage-in-local-politics/"
+    },
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/VDKW7SNIBNGFHBFWPTRDFPCFWI.jpg",
+        article_title: "Columbia still refuses to give the GWC-UAW neutral, third-party arbitration. Is this indicative of a deeper institutional issue?",
+        article_authors: "Irie Sentner",
+        article_link: "https://www.columbiaspectator.com/news/2021/03/25/columbia-still-refuses-to-give-the-gwc-uaw-neutral-third-party-arbitration-is-this-indicative-of-a-deeper-institutional-issue/"
+    },
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/RL57Z5OJRVDQHOPI7DZJS3DOMY.jpg",
+        article_title: "April Tyler, fierce advocate for affordable housing in West Harlem, has died",
+        article_authors: "Claire Hunt",
+        article_link: "https://www.columbiaspectator.com/news/2021/02/24/april-tyler-fierce-advocate-for-affordable-housing-in-west-harlem-has-died/"
+    },
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/NQBULEFJMRH53CVFUVZV4UCJ4M.jpg",
+        article_title: "Andrea Sahouri, Journalism ’19, wins acquittal of Floyd protest charges",
+        article_authors: "Abby Melbourne",
+        article_link: "https://www.columbiaspectator.com/news/2021/03/12/andrea-sahouri-journalism-19-wins-acquittal-of-floyd-protest-charges/"
+    },
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/A3M4R3QDEVHHFEHPG4MSL2VHDY.jpg",
+        article_title: "How Peggy Shepard helped spearhead environmental action in West Harlem",
+        article_authors: "Maya Lameche",
+        article_link: "https://www.columbiaspectator.com/news/2021/03/08/how-peggy-shepard-helped-spearhead-environmental-action-in-west-harlem/"
+    },
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/F642NPJE2FC3BIJFQAJZSTD3GI.jpg",
+        article_title: "Looking back on Morningside Heights history: How Marie Runyon became a tenant crusader and fierce progressive advocate",
+        article_authors: "Kelly Ann Cosentino",
+        article_link: "https://www.columbiaspectator.com/news/2021/03/23/looking-back-on-morningside-heights-history-how-marie-runyon-became-a-tenant-crusader-and-fierce-progressive-advocate/"
+    },
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/MSFGWRXCU5CGPFIE7IZJA57NRU.jpg",
+        article_title: "Student-led Four Women Fund has redistributed over $24,000 to Black womxn in need",
+        article_authors: "Maya Lameche",
+        article_link: "https://www.columbiaspectator.com/news/2021/02/26/student-led-four-women-fund-has-redistributed-over-24000-to-black-womxn-in-need/"
+    }
+];
+
+export const uni_news_articles = [
     {
         image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/DKLQKFAXQZDNFBGI4RVMFMTB7Y.jpg",
         article_title: " 175 women alleged sexual abuse against a Columbia gynecologist. Five years after his conviction, they’re still fighting to be heard.",
@@ -112,7 +169,28 @@ export const a_and_e_articles = [
     }
 ];
 
-export const spectrum_articles = [
+export const opinion_articles = [
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/ME576RF2CBCATJROBSIX5JD7WA.jpg",
+        article_title: "Women-owned restaurants in MoHi",
+        article_authors: "Ariana Novo and Tonycia Coe",
+        article_link: "https://www.columbiaspectator.com/spectrum/2021/03/08/women-owned-restaurants-in-mohi/"
+    },
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/5XDDQPN32NBXBADOYTRPAFBELA.png",
+        article_title: "How to get involved with female empowerment initiatives on campus and beyond",
+        article_authors: "Charlotte Wu and Victoria Tereshchenko",
+        article_link: "https://www.columbiaspectator.com/spectrum/2021/03/08/how-to-get-involved-with-female-empowerment-initiatives-on-campus-and-beyond/"
+    },
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/THKAWW7H2FEANLF336CRWAMCQU.jpg",
+        article_title: "Meet Spectator’s 145th Managing Board",
+        article_authors: "Managing Board",
+        article_link: "https://www.columbiaspectator.com/spectrum/2021/02/04/meet-spectators-145th-managing-board/"
+    }
+];
+
+export const eye_articles = [
     {
         image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/ME576RF2CBCATJROBSIX5JD7WA.jpg",
         article_title: "Women-owned restaurants in MoHi",
@@ -170,6 +248,27 @@ export const sports_articles = [
         article_authors: "Jorge Hernandez and Rebecca Wachen",
         article_link: "https://www.columbiaspectator.com/sports/2021/03/25/breaking-glass-ceilings-three-female-coaches-from-the-ivy-league-on-their-roles-and-hopes-for-the-future/"
     },
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/VWK7YY26QBDNFPAL2T55IYP2AY.jpeg",
+        article_title: "Fear of finding nothing: Young women athletes need female role models in sports",
+        article_authors: "Adam Lang",
+        article_link: "https://www.columbiaspectator.com/sports/2021/03/24/fear-of-finding-nothing-young-women-athletes-need-female-role-models-in-sports/"
+    },
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/SFDSLN6KIBHKTB7JGKSGSUWQ3E.jpg",
+        article_title: "The unstable origin of women’s soccer did not bode well for the program",
+        article_authors: "Ashleigh Lackey",
+        article_link: "https://www.columbiaspectator.com/section-lead/2021/03/25/the-unstable-origin-of-womens-soccer-did-not-bode-well-for-the-program/"
+    },
+    {
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/Y2FWYGWTHBGIPIWIDMZICCIT4A.jpg",
+        article_title: "I haven’t reached my potential’: After leading her team to a canceled postseason, Janiya Clemmons weighs basketball and banking",
+        article_authors: "Adam Lang",
+        article_link: "https://www.columbiaspectator.com/sports/2020/04/19/after-leading-her-team-to-a-cancelled-postseason-janiya-clemmons-weighs-basketball-and-banking/"
+    }
+];
+
+export const illustrations = [
     {
         image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/VWK7YY26QBDNFPAL2T55IYP2AY.jpeg",
         article_title: "Fear of finding nothing: Young women athletes need female role models in sports",

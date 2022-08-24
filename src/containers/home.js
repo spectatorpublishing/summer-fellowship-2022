@@ -33,17 +33,17 @@ const CreditsTitle = styled.div`
 `;
 
 const Padding = styled.div`
-    margin: 3rem;
+   height: 7rem;
 `
 
-const Home = () => {
+const Home = ({next, nextLink, setSection}) => {
 
     return (
         <>
             <HomeContainer>
                 <Banner />
                 <Letter />
-                <NextSection nextseclink='/news' nextsec='News' image={image}></NextSection>
+                <NextSection setSection={() => setSection(next)} nextseclink={nextLink} nextsec={next} image={image}></NextSection>
             </HomeContainer>
             <Padding id="credits"/>
             <CreditsTitle>Credits</CreditsTitle>

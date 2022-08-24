@@ -8,6 +8,16 @@ import ArticleCard from '../components/article-card';
 
 const Section = ({articles, header, next, nextLink, setSection}) => {
 
+    const handleMenuItemOnClick = () => {
+        if (next === "Credits") {
+            setSection("Home");
+        } else {
+            setSection(next);
+        }
+
+        console.log(next);
+    }
+
     return(
         <main>
         <SectionTitle title={header}/>
@@ -50,7 +60,7 @@ const Section = ({articles, header, next, nextLink, setSection}) => {
                 <ArticleCard article={article} />
             ))}
         </Mobile>
-        <NextSection onClick={() => next === "Credits" ? setSection("Home") : setSection(next)} nextseclink={nextLink} nextsec={next} image="https://patch.com/img/cdn20/users/23306266/20200814/041504/styles/patch_image/public/columbia-university-building___14161440408.jpg"></NextSection>
+        <NextSection setSection={handleMenuItemOnClick} nextseclink={nextLink} nextsec={next} image="https://patch.com/img/cdn20/users/23306266/20200814/041504/styles/patch_image/public/columbia-university-building___14161440408.jpg"></NextSection>
         </main>
     );
 };

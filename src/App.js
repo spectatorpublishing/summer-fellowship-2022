@@ -3,10 +3,13 @@ import Home from './containers/home';
 import Section from './containers/Section';
 import Navbar from './components/navbar';
 import ScrollToTop from "./components/ScrollToTop";
-import { news_articles } from './data/articles';
+import { uni_news_articles } from './data/articles';
+import { city_news_articles } from './data/articles';
 import { a_and_e_articles } from './data/articles';
-import { spectrum_articles } from './data/articles';
+import { opinion_articles } from './data/articles';
 import { sports_articles } from './data/articles';
+import { eye_articles } from './data/articles';
+import { illustrations } from './data/articles';
 import { React, useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import { sections } from './data/sections';
@@ -35,6 +38,10 @@ const App = () => {
     setCurrentSection();
   },[]);
 
+  useEffect(() => {
+    console.log(currentSection);
+  },[currentSection]);
+
   const setCurrentSection = () => {
     const currentPath = window.location.pathname;
 
@@ -51,11 +58,22 @@ const App = () => {
         <Navbar lightLogo={currentSection == "Home"} currentSection={currentSection} setSection={setSection}/>
         <ScrollToTop>
         <Switch>
-            <Route exact path='/' component={Home}/>
             <Route
-              exact path='/news'
+              exact path='/'
               render={(props) => (
-                <Section {...props} articles={news_articles} header='News' next='Arts & Entertainment' nextLink='/a&e' setSection={setSection}/>
+                <Home {...props} next='University News' nextLink='/uni-news' setSection={setSection}/>
+              )}
+            />
+            <Route
+              exact path='/uni-news'
+              render={(props) => (
+                <Section {...props} articles={uni_news_articles} header='University News' next='City News' nextLink='/city-news' setSection={setSection}/>
+              )}
+            />
+            <Route
+              exact path='/city-news'
+              render={(props) => (
+                <Section {...props} articles={city_news_articles} header='City News' next='Arts & Entertainment' nextLink='/a&e' setSection={setSection}/>
               )}
             />
             <Route
@@ -67,13 +85,19 @@ const App = () => {
             <Route
               exact path='/sports'
               render={(props) => (
-                <Section {...props} articles={sports_articles} header='Sports' next='Spectrum' nextLink='/spectrum' setSection={setSection}/>
+                <Section {...props} articles={sports_articles} header='Sports' next='Opinion' nextLink='/opinion' setSection={setSection}/>
+              )}
+            />
+             <Route
+              exact path='/opinion'
+              render={(props) => (
+                <Section {...props} articles={opinion_articles} header='Opinion' next='The Eye' nextLink='/eye' setSection={setSection}/>
               )}
             />
             <Route
-              exact path='/spectrum'
+              exact path='/eye'
               render={(props) => (
-                <Section {...props} articles={spectrum_articles} header='Spectrum' next='Credits' nextLink='/#credits' setSection={setSection}/>
+                <Section {...props} articles={eye_articles} header='The Eye' next='Credits' nextLink='/#credits' setSection={setSection}/>
               )}
             />
         </Switch>

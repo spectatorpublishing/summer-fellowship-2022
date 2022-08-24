@@ -85,8 +85,10 @@ const Photo = styled.img`
 `
 
 
-const NextSection = ( {nextseclink, nextsec, image} ) => ( //add image prop if needed, currently calling from file
-    <Wrapper>
+const NextSection = ( {nextseclink, nextsec, image, setSection} ) => { //add image prop if needed, currently calling from file
+   
+    return (
+       <Wrapper onClick={setSection}>
         <HashLink to={nextseclink} style={{ textDecoration: 'none' }}>
         <Body>
             <TextBox>
@@ -99,6 +101,7 @@ const NextSection = ( {nextseclink, nextsec, image} ) => ( //add image prop if n
         </Body>
         </HashLink>
     </Wrapper>
-);
+   )
+};
 
 export default NextSection;
