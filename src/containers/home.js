@@ -9,6 +9,10 @@ import Credits from './credits';
 
 const HomeContainer = styled.div`
     margin-bottom: 5rem;
+
+    @media only screen and (max-width: 768px){
+        margin-bottom: 0rem;
+    }
 `;
 
 const CreditsTitle = styled.div`
@@ -33,7 +37,11 @@ const CreditsTitle = styled.div`
 `;
 
 const Padding = styled.div`
-   height: 7rem;
+    height: 7rem;
+
+    @media only screen and (max-width: 768px){
+        height: 4rem;
+    }
 `
 
 const Home = ({next, nextLink, setSection}) => {

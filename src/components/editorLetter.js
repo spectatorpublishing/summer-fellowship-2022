@@ -4,18 +4,24 @@ import theme from '../theme';
 
 const Letter = () => (
     <Wrapper>
-        <Title>Letter From The Editor</Title>
+        <Title>Letter From The Directors</Title>
         <Text>
             <p>Dear readers, </p>
-            <p>Every March, we focus on the experiences and achievements of women around the world in honor of Women’s History Month. Discussions around the historical gender disparities at Columbia are often cut off either in 1981, when Columbia College made the decision to allow women to enroll, or in 1983, when the first women actually matriculated. However, this edition is a reminder that the struggle for equality did not end when women could attend Columbia College—it continues to this day.</p>
-            <p>Despite only 40 years of coeducation at Columbia College, the history of women at the University goes back to its founding. For too long, the narratives of women have been erased, minimized, or co-opted by men. As we celebrate Women’s History Month, we hope to highlight the triumphs of women in the greater Columbia community since the decision to go coed 40 years ago while shining a steady light on the disparities that still exist.</p>
-            <p>Within Spectator’s Women’s History Month issue, you can learn about the pervasive funding disparities between men’s and women’s sports at Columbia and examine the gender-based misconduct changes the Graduate Workers of Columbia-United Auto Workers union is fighting for to protect survivors in its strike against the University. You will find our coverage of the importance of the Athena Film Festival in highlighting women filmmakers; profiles of student musicians, community activists, and Ivy League coaches who have not let any barriers impede their success; and the creation of the Barnard-Columbia Athletic Consortium, which allowed students who attend historically women’s colleges to compete in Division I athletics for the first time.</p>        
-            <p>As a corporate board made up of three women—one from Barnard, one from Columbia College, and the other from the School of Engineering and Applied Science—we have encountered the complicated relationship the University has with gender in various forms. We want to take this opportunity to center the amazing work of our staff—which is 76 percent female—while bearing in mind that the structures in place here at Columbia, even 40 years after coed integration, continuously disadvantage many of our staffers, readers, and loved ones.</p>
-            <p>We hope that within our edition, you can learn the stories of the contributions of women scholars, activists, coaches, athletes, artists, musicians, and learners within our community. We also want to emphasize that much of their work is not yet done. The issues and accomplishments covered in this edition are not one-off events or isolated incidents; they come together to form a connected, everlasting story.</p>
+            <p>The first Spectator Summer Fellowship Program, held during the summer of 2020, arose as a response to the pandemic, which had brought the world to a standstill. With regular life suspended, Spectator launched SSFP as a way to simultaneously document the drastic changes that had transformed daily life and invite the participation of incoming Columbia students who might have faced accessibility barriers to joining Spectator.</p>
+            <p>That cohort’s success can be seen not just in the quality of the content it produced, but in the  composition of Spectator’s current leaders. Many of the 2020 SSFP fellows now hold managing and deputy board positions at Spectator.</p>
+            <p>While our lives may be less affected by the pandemic now than they were two years ago, we launched SSFP 2022 this year with a similar objective as its first iteration: to get incoming students excited about and involved with Spectator before stepping onto campus.</p>
+            <p>During this program, we welcomed 56 incoming undergraduates, including transfer and dual-degree students, from around the world to embark on a two-part journey. For the first seven days, fellows engaged with 19 staff-led workshops introducing them to the fundamentals of journalism and the work of nearly every Spectator section. These online workshops were offered both synchronously and asynchronously to accommodate fellows’ time zones and other personal circumstances. For the remainder of the program, each fellow was assigned a mentor from current Spectator staff, who walked them through the creation of their first articles, videos, graphics, and illustrations.</p>
+            <p>This edition is the culmination of those projects. It has blown our expectations out of the water.</p>
+            <p>We’ve been impressed by our fellows’ engagement and depth of thought as they’ve grappled with the challenging concepts that comprise journalism, many of which have been novel to them. We’re also incredibly grateful for all of the wonderful Spectator staffers who have produced robust workshops, provided quality mentorship, and created this webpage you’re reading now—many while simultaneously working full-time jobs or internships.</p>
+            <p>We have no doubt that this creative, empathetic, and energetic fellowship class has the potential to become part of the next generation of great journalists, engineers, and business leaders.</p>
+            <p>With all our very best,</p>
         </Text>
-        <Signature><div className='name'>Sarah Braka</div><div className='title'>Editor in Chief</div></Signature>
-        <Signature><div className='name'>Elizabeth Karpen</div><div className='title'>Managing Editor</div></Signature>
-        <Signature><div className='name'>Tamarah Wallace</div><div className='title'>Publisher</div></Signature>
+        <Signatures>
+            <Signature className='left'><div className='name'>Irie Sentner</div><div className='title'>University News Editor</div></Signature>
+            <Spacing/>
+            <Signature><div className='name'>Derek Ng</div><div className='title'>Managing Editor of The Eye</div></Signature>
+        </Signatures>
+        <Signature><div className="bold">SSFP Co-Directors</div></Signature>
     </Wrapper>
 );
 
@@ -67,24 +73,68 @@ const Text = styled.div`
     }
 `;
 
+const Signatures = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin: 1rem auto;
+
+    .left {
+        margin-left: 2rem;
+
+        @media only screen and (max-width: 768px){
+            margin-left: 0rem;
+        }
+    }
+
+    @media only screen and (max-width: 768px){
+        flex-direction: column;
+
+        margin: 0rem 0rem;
+    }
+`;
+
+const Spacing = styled.div`
+    width: 8rem;
+`
+
 const Signature = styled.div`
     .name {
         font-family: 'Nothing You Could Do';
         font-size: 1.625rem;
+        margin: 0rem auto;
+        text-align: center;
 
         @media only screen and (max-width: 768px){
             font-size: 1.125rem;
+            text-align: left;
         }
     }
 
     .title {
         font-family: Khula;
         font-size:  1.125rem;
+        margin-bottom: 0.5rem;
 
         @media only screen and (max-width: 768px){
             font-size: 1rem;
         }
     }
 
-    margin: 1rem 0rem 1rem 0rem;
+    .bold {
+        font-weight: 600;
+        font-family: Khula;
+        font-size:  1.25rem;
+
+        @media only screen and (max-width: 768px){
+            font-size: 1.125rem;
+        }
+    }
+
+    margin: 0rem auto 0rem auto;
+
+    @media only screen and (max-width: 768px){
+        flex-direction: column;
+
+        margin: 0rem;
+    }
 `;
