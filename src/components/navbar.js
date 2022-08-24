@@ -175,7 +175,7 @@ const Navbar = ({ lightLogo, currentSection, setSection }) => {
     useEffect(() => {
         window.addEventListener("resize", () => setWidth(window.innerWidth));
         if (width > 1023) {
-            setToggle(true);
+            // setToggle(true);
         }
     });
 
@@ -206,12 +206,11 @@ const Navbar = ({ lightLogo, currentSection, setSection }) => {
                 {sections.map((item) => {
                     return (
                         <>
-                            {(show) ?
-                                <NavHashLink smooth to={item.url} exact={item.exact}>
-                                    <Link className={currentSection === item.title ? "active" : ""} onClick={() => handleMenuItemOnClick(item)}>
-                                        {item.title}
-                                    </Link>
-                                </NavHashLink> : null}
+                            <NavHashLink smooth to={item.url} exact={item.exact}>
+                                <Link className={currentSection === item.title ? "active" : ""} onClick={() => handleMenuItemOnClick(item)}>
+                                    {item.title}
+                                </Link>
+                            </NavHashLink>
                         </>
                     )
                 })}

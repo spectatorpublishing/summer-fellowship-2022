@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import { device } from '../device';
-import {illustrations} from '../data/illustrations';
+import {illustrations} from '../data/credits';
 import theme from '../theme';
 
 const Article1 = ({article1, article2, hideImage}) => {

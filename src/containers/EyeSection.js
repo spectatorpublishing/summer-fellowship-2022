@@ -64,6 +64,10 @@ export default EyeSection;
 
 const Wrapper = styled.main`
     margin-top: -3rem;
+
+    @media (max-width: 768px) {
+        margin-top: -1rem;
+    }
 `;
 
 const Mobile = styled.div`

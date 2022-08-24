@@ -64,7 +64,7 @@ const Section = styled.div`
     @media only screen and (max-width: 570px) {
 
         &.right{
-            margin-top: 20rem;
+            margin-top: 23rem;
             margin-bottom: 5rem;
         }
 
@@ -77,7 +77,7 @@ const Section = styled.div`
     @media only screen and (max-width: 430px) {
 
         &.right{
-            margin-top: 10rem;
+            margin-top: 12rem;
             margin-bottom: 0rem;
         }
 
@@ -116,7 +116,7 @@ const Text = styled.div`
         }
     
         &.right{
-            font-size: 40px;
+            font-size: 38px;
         }
     }
 
@@ -126,7 +126,7 @@ const Text = styled.div`
         }
     
         &.right{
-            font-size: 35px;
+            font-size: 32px;
         }
     }
 
@@ -141,7 +141,7 @@ const Text = styled.div`
     
         &.right{
             margin-left: 1rem;
-            font-size: 30px;
+            font-size: 28px;
         }
     }
 `;
@@ -165,7 +165,7 @@ const Row = styled.div`
         }
     
         &.right{
-            width: 26rem;
+            width: 35rem;
         }
     }
 
@@ -175,7 +175,7 @@ const Row = styled.div`
         }
     
         &.right{
-            width: 22rem;
+            width: 25rem;
         }
     }
 
@@ -185,7 +185,7 @@ const Row = styled.div`
         }
     
         &.right{
-            width: 18rem;
+            width: 20rem;
         }
     }
 `;
