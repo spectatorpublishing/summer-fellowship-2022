@@ -1,4 +1,4 @@
-# 2021 Women's History Month Issue
+# 2022 Spectator Summer Fellowship Program
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
