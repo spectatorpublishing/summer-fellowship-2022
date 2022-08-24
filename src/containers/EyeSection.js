@@ -2,11 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import SectionTitle from '../components/section-title';
 import Article1 from '../components/article1';
-import ArticleCards from '../components/articleCards';
 import NextSection from '../components/nextSection';
 import ArticleCard from '../components/article-card';
 
-const Section = ({articles, header, next, nextLink, setSection}) => {
+const EyeSection = ({articles, header, next, nextLink, setSection}) => {
 
     const handleMenuItemOnClick = () => {
         if (next === "Credits") {
@@ -18,54 +17,54 @@ const Section = ({articles, header, next, nextLink, setSection}) => {
         console.log(next);
     }
 
-    return(
-        <main>
-        <SectionTitle title={header}/>
+    const isEyeSection = header === "The Eye";
+
+    return (
+        <Wrapper>
+        <SectionTitle title={header} isEyeSection={isEyeSection}/>
+        <EyeImage><img src="https://cloudfront-us-east-1.images.arcpublishing.com/spectator/JY4EQCPCIZA4JD3ASOZYSPQEA4.gif"></img></EyeImage>
         <Desktop>
         <Article1
             article1={articles[0]}
             article2={articles[1]}
+            hideImage={isEyeSection}
         />
-        {articles[4] ?
-        <ArticleCards
-            article1={articles[2]}
-            article2={articles[3]}
-            article3={articles[4]}
-        />: 
         <Article1
             article1={articles[2]}
             article2={articles[3]}
-        />}
+            hideImage={isEyeSection}
+        />
         <Article1
             article1={articles[5]}
             article2={articles[6]}
+            hideImage={isEyeSection}
         />
-        {articles[9] ?
-        <ArticleCards
-            article1={articles[7]}
-            article2={articles[8]}
-            article3={articles[9]}
-        />: 
         <Article1
             article1={articles[7]}
             article2={articles[8]}
-        />}
+            hideImage={isEyeSection}
+        />
         <Article1
             article1={articles[10]}
             article2={articles[11]}
+            hideImage={isEyeSection}
         />
         </Desktop>
         <Mobile>
             {articles.map(article => (
-                <ArticleCard article={article}/>
+                <ArticleCard article={article} hideImage={isEyeSection}/>
             ))}
         </Mobile>
         <NextSection setSection={handleMenuItemOnClick} nextseclink={nextLink} nextsec={next} image="https://patch.com/img/cdn20/users/23306266/20200814/041504/styles/patch_image/public/columbia-university-building___14161440408.jpg"></NextSection>
-        </main>
+        </Wrapper>
     );
 };
 
-export default Section;
+export default EyeSection;
+
+const Wrapper = styled.main`
+    margin-top: -3rem;
+`;
 
 const Mobile = styled.div`
     display: flex;

@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './containers/home';
 import Section from './containers/Section';
+import EyeSection from './containers/EyeSection';
 import Navbar from './components/navbar';
 import ScrollToTop from "./components/ScrollToTop";
 import { uni_news_articles } from './data/articles';
@@ -97,7 +98,7 @@ const App = () => {
             <Route
               exact path='/eye'
               render={(props) => (
-                <Section {...props} articles={eye_articles} header='The Eye' next='Credits' nextLink='/#credits' setSection={setSection}/>
+                <EyeSection {...props} articles={eye_articles} header='The Eye' next='Credits' nextLink='/#credits' setSection={setSection}/>
               )}
             />
         </Switch>

@@ -78,11 +78,11 @@ const Image = styled.div`
     }
 `;
 
-const ArticleCard = ({ article }) => {
+const ArticleCard = ({ article, hideImage }) => {
     return (
         <Card>
             <a href={article.article_link}>
-                <Image> <img alt='article image' src={article.image_url} /> </Image>
+                <Image> {!hideImage &&<img alt='article image' src={article.image_url} /> }</Image>
                 <Title>{article.article_title}</Title>
                 <Name>{article.article_authors}</Name>
             </a>

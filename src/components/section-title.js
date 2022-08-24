@@ -26,8 +26,8 @@ const Title = styled.div`
     font-weight: 400;
     font-size: 4rem;
     font-family: 'EB Garamond', serif;
-    padding: 5rem 1.25rem 0 8.75rem;
-    color: ${theme.colors.darkBlue};
+    padding: ${props => props.isEyeSection ? '1rem 1.25rem 0 8.75rem' : '5rem 1.25rem 0 8.75rem'};
+    color: ${props => props.isEyeSection ? 'white' : '#2F4C6C'};
 
     @media only screen and (max-width: 768px) {
         font-size: 3rem;
@@ -45,11 +45,11 @@ const Title = styled.div`
 }
 `;
 
-const SectionTitle = ({ title }) => {
+const SectionTitle = ({ title, isEyeSection }) => {
     return (
       <Box> 
-        <Squiggle><img src="https://summer-fellowship-2022.s3.amazonaws.com/squiggly+line.png"/></Squiggle>
-        <Title> {title} </Title>
+        {!isEyeSection && <Squiggle><img src="https://summer-fellowship-2022.s3.amazonaws.com/squiggly+line.png"/></Squiggle>}
+        <Title isEyeSection={isEyeSection}> {title} </Title>
       </Box>
     );
   };

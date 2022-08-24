@@ -4,16 +4,18 @@ import { device } from '../device';
 import {illustrations} from '../data/illustrations';
 import theme from '../theme';
 
-const Article1 = ({article1, article2}) => {
+const Article1 = ({article1, article2, hideImage}) => {
     return(
         <ArticleSection>
         <Article
             article={article1}
             side = 'left'
+            hideImage={hideImage}
         />
         <Article
             article={article2}
             side = 'right'
+            hideImage={hideImage}
         />
         </ArticleSection>
     );
@@ -21,17 +23,17 @@ const Article1 = ({article1, article2}) => {
 
 export default Article1;
 
-const Article = ({article, side}) => {
+const Article = ({article, side, hideImage}) => {
     return (
         <>
         {article ?
         <Wrapper href={article.article_link} className={side}>
-            {(side == "left") ? null : <Image className={side}><img src={article.image_url}/></Image>}
+            {(side == "left") ? null : <Image hideImage={hideImage} className={side}><img src={article.image_url}/></Image>}
             <div className="textbox">
                 <Title><Text>{article.article_title}</Text></Title>
                 <Author>By {article.article_authors}</Author>
             </div>
-            {(side == "right") ? null : <Image className={side}><img src={article.image_url}/></Image>}
+            {(side == "right") ? null : <Image hideImage={hideImage} className={side}><img src={article.image_url}/></Image>}
         </Wrapper> : null}
         </>
     );
@@ -100,12 +102,12 @@ const Author = styled.div`
 `;
 const Image = styled.div`
     margin: auto 0rem auto 0rem;
-    background-color: ${theme.colors.blue};
+    background-color: ${props => props.hideImage ? "transparent" : '#85a1cd'};
     width: 28rem;
-    height: 22rem;
+    height: ${props => props.hideImage ? "15rem" : '22rem'};
 
     img {
-        display: block;
+        display: ${props => props.hideImage ? "none" : 'block'};
         object-fit: cover;
         width: 28rem;
         height: 22rem;
