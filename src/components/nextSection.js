@@ -96,7 +96,7 @@ const NextSection = ( {nextseclink, nextsec, image, setSection} ) => { //add ima
                 <Begin>Read Next Section:</Begin>
             </TextBox>
             <Img>
-                <Photo src="https://womenshistorymonth2021.s3.amazonaws.com/New+3_5.PNG" />
+                <Photo src="https://summer-fellowship-2022.s3.amazonaws.com/mainImage.jpeg" />
             </Img>
         </Body>
         </HashLink>

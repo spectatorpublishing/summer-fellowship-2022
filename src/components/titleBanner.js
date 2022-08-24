@@ -18,18 +18,18 @@ export default Banner;
 
 const Wrapper = styled.div`
     height: 25rem;
-    background-image: url("https://womenshistorymonth2021.s3.amazonaws.com/New+3_5.PNG");
+    background-image: url("https://summer-fellowship-2022.s3.amazonaws.com/mainImage.jpeg");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    padding: 5rem 0rem 5rem 0rem;
+    padding: 4rem 0rem 5rem 0rem;
     top: 0;
 
     @media only screen and (max-width: 768px) {
         height: 30rem;
         padding: 0rem 0rem 5rem 0rem;
         margin: 1.2rem;
-        background-image: url("https://womenshistorymonth2021.s3.amazonaws.com/3_5.png");
+        background-image: url("https://summer-fellowship-2022.s3.amazonaws.com/mainImage+copy.jpeg");
     }
 
     @media only screen and (max-width: 430px) {
@@ -43,7 +43,7 @@ const Section = styled.div`
     flex-direction: column;
 
     &.right{
-        margin-top: 15rem;
+        margin-top: 12rem;
     }
 
     &.left{
