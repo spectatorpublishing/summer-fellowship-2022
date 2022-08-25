@@ -201,21 +201,18 @@ export const sports_articles = [
 
 export const illustrations = [
     {
-        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/VWK7YY26QBDNFPAL2T55IYP2AY.jpeg",
-        article_title: "Fear of finding nothing: Young women athletes need female role models in sports",
-        article_authors: "Adam Lang",
-        article_link: "https://www.columbiaspectator.com/sports/2021/03/24/fear-of-finding-nothing-young-women-athletes-need-female-role-models-in-sports/"
+        image_url: "https://summer-fellowship-2022.s3.amazonaws.com/mainImage.jpeg",
+        article_authors: "Ainhoa Petri-Hidalgo and Yingjie Wang",
+        article_link: "https://summerfellowship2022.columbiaspectator.com/"
     },
     {
-        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/SFDSLN6KIBHKTB7JGKSGSUWQ3E.jpg",
-        article_title: "The unstable origin of women's soccer did not bode well for the program",
-        article_authors: "Ashleigh Lackey",
-        article_link: "https://www.columbiaspectator.com/section-lead/2021/03/25/the-unstable-origin-of-womens-soccer-did-not-bode-well-for-the-program/"
+        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/JY4EQCPCIZA4JD3ASOZYSPQEA4.gif",
+        article_authors: "Ainhoa Petri-Hidalgo",
+        article_link: "https://www.columbiaspectator.com/eye/"
     },
     {
-        image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/Y2FWYGWTHBGIPIWIDMZICCIT4A.jpg",
-        article_title: "I haven't reached my potential': After leading her team to a canceled postseason, Janiya Clemmons weighs basketball and banking",
-        article_authors: "Adam Lang",
-        article_link: "https://www.columbiaspectator.com/sports/2020/04/19/after-leading-her-team-to-a-cancelled-postseason-janiya-clemmons-weighs-basketball-and-banking/"
+        image_url: "https://summer-fellowship-2022.s3.amazonaws.com/KXLZTM6OM5GRXDKHLILAV3BWAU.gif",
+        article_authors: "Ena Selman-Housein",
+        article_link: "https://www.columbiaspectator.com/"
     }
 ];

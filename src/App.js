@@ -99,13 +99,13 @@ const App = () => {
             <Route
               exact path='/eye'
               render={(props) => (
-                <Section {...props} articles={opinion_articles} header='The Eye' next='Illustrations' nextLink='/illo' setSection={setSection}/>
+                <EyeSection {...props} articles={eye_articles} header='The Eye' next='Illustrations' nextLink='/illo' setSection={setSection}/>
               )}
             />
             <Route
               exact path='/illo'
               render={(props) => (
-                <EyeSection {...props} articles={illustrations} header='Illustrations' next='Credits' nextLink='/#credits' setSection={setSection}/>
+                <IlloSection {...props} articles={illustrations} header='Illustrations' next='Credits' nextLink='/#credits' setSection={setSection}/>
               )}
             />
         </Switch>
