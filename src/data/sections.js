@@ -13,7 +13,7 @@ export const sections = [
         url: "/city-news",
     },
     {
-        title: "Arts & Entertainment",
+        title: "A&E",
         url: "/a&e",
     },
     {
@@ -27,6 +27,10 @@ export const sections = [
     {
         title: "The Eye",
         url: "/eye",
+    },
+    {
+        title: "Illustrations",
+        url: "/illo",
     },
     {
         title: "Credits",

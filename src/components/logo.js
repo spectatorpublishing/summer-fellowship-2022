@@ -17,10 +17,10 @@ const Wrapper = styled.a`
     margin: 0rem;
     padding: 0rem 0rem 0rem 3rem;
     display: block;
-    height: 1.5rem;
+    height: 1.25rem;
 
     img {
-        height: 1.5rem;
+        height: 1.25rem;
     }
 
     @media only screen and (max-width: 1023px){

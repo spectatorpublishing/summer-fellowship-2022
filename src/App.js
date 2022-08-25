@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './containers/home';
 import Section from './containers/Section';
 import EyeSection from './containers/EyeSection';
+import IlloSection from './containers/IlloSection';
 import Navbar from './components/navbar';
 import ScrollToTop from "./components/ScrollToTop";
 import { uni_news_articles } from './data/articles';
@@ -98,7 +99,13 @@ const App = () => {
             <Route
               exact path='/eye'
               render={(props) => (
-                <EyeSection {...props} articles={eye_articles} header='The Eye' next='Credits' nextLink='/#credits' setSection={setSection}/>
+                <Section {...props} articles={opinion_articles} header='The Eye' next='Illustrations' nextLink='/illo' setSection={setSection}/>
+              )}
+            />
+            <Route
+              exact path='/illo'
+              render={(props) => (
+                <EyeSection {...props} articles={illustrations} header='Illustrations' next='Credits' nextLink='/#credits' setSection={setSection}/>
               )}
             />
         </Switch>
