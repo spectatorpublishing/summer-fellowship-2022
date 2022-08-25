@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.cb02bc4d.chunk.css",
-    "main.js": "/static/js/main.ba761c75.chunk.js",
-    "main.js.map": "/static/js/main.ba761c75.chunk.js.map",
+    "main.css": "/static/css/main.709c7b3e.chunk.css",
+    "main.js": "/static/js/main.b3de2d78.chunk.js",
+    "main.js.map": "/static/js/main.b3de2d78.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.54887c25.js",
     "runtime-main.js.map": "/static/js/runtime-main.54887c25.js.map",
     "static/js/2.69c2c56f.chunk.js": "/static/js/2.69c2c56f.chunk.js",
     "static/js/2.69c2c56f.chunk.js.map": "/static/js/2.69c2c56f.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.cb02bc4d.chunk.css.map": "/static/css/main.cb02bc4d.chunk.css.map",
+    "static/css/main.709c7b3e.chunk.css.map": "/static/css/main.709c7b3e.chunk.css.map",
     "static/js/2.69c2c56f.chunk.js.LICENSE.txt": "/static/js/2.69c2c56f.chunk.js.LICENSE.txt",
     "static/media/primaryImage.9b7d3ab0.png": "/static/media/primaryImage.9b7d3ab0.png",
     "static/media/spectator-logo.48429944.svg": "/static/media/spectator-logo.48429944.svg"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.54887c25.js",
     "static/js/2.69c2c56f.chunk.js",
-    "static/css/main.cb02bc4d.chunk.css",
-    "static/js/main.ba761c75.chunk.js"
+    "static/css/main.709c7b3e.chunk.css",
+    "static/js/main.b3de2d78.chunk.js"
   ]
 }
