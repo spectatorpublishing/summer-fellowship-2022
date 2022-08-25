@@ -107,8 +107,8 @@ const CreditsList = () => {
                         </SubDiv>
                         <SubDiv>
                             <h2>Lead Illustration By</h2>
-                            <p>Ainhoa Petri-Hidalgo SSFP Fellow</p>
-                            <p>Yingjie Wang Senior Staff Illustrator</p>
+                            <p>Ainhoa Petri-Hidalgo, SSFP Fellow</p>
+                            <p>Yingjie Wang, Illustrations Editor</p>
                         </SubDiv>
                         <SubDiv>
                             <h2>University News</h2>
@@ -244,8 +244,8 @@ const CreditsList = () => {
                             </SubDiv>
                             <SubDiv>
                             <h2>Lead Illustration By</h2>
-                            <p>Ainhoa Petri-Hidalgo SSFP Fellow</p>
-                            <p>Yingjie Wang Senior Staff Illustrator</p>
+                            <p>Ainhoa Petri-Hidalgo, SSFP Fellow</p>
+                            <p>Yingjie Wang, Illustrations Editor</p>
                             </SubDiv>
                             <SubDiv>
                                 <h2>Sports</h2>
@@ -296,8 +296,8 @@ const CreditsList = () => {
                             </SubDiv>
                             <SubDiv>
                             <h2>Lead Illustration By</h2>
-                            <p>Ainhoa Petri-Hidalgo SSFP Fellow</p>
-                            <p>Yingjie Wang Senior Staff Illustrator</p>
+                            <p>Ainhoa Petri-Hidalgo, SSFP Fellow</p>
+                            <p>Yingjie Wang, Illustrations Editor</p>
                             </SubDiv>
                             <SubDiv>
                                 <h2>Graphics</h2>
