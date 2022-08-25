@@ -75,22 +75,8 @@ const Text = styled.div`
 
 const Signatures = styled.div`
     display: flex;
-    flex-direction: row;
-    margin: 1rem auto;
-
-    .left {
-        margin-left: 2rem;
-
-        @media only screen and (max-width: 768px){
-            margin-left: 0rem;
-        }
-    }
-
-    @media only screen and (max-width: 768px){
-        flex-direction: column;
-
-        margin: 0rem 0rem;
-    }
+    flex-direction: column;
+    margin: 0rem;
 `;
 
 const Spacing = styled.div`
@@ -101,8 +87,8 @@ const Signature = styled.div`
     .name {
         font-family: 'Nothing You Could Do';
         font-size: 1.625rem;
-        margin: 0rem auto;
-        text-align: center;
+        margin: 0rem;
+        text-align: left;
 
         @media only screen and (max-width: 768px){
             font-size: 1.125rem;
@@ -130,11 +116,5 @@ const Signature = styled.div`
         }
     }
 
-    margin: 0rem auto 0rem auto;
-
-    @media only screen and (max-width: 768px){
-        flex-direction: column;
-
-        margin: 0rem;
-    }
+    margin: 0rem;
 `;

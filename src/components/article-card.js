@@ -9,6 +9,11 @@ const Card = styled.div`
     margin: 1rem 1rem auto 1rem;
     cursor: pointer;
     flex: 1;
+    transition: transform .2s;
+
+    :hover {
+        transform: scale(1.05);
+    }
     
     :hover{
         img{
@@ -56,25 +61,26 @@ const Name = styled.div`
 `;
 
 const Image = styled.div`
-    background-color: ${theme.colors.blue};
+    background-image: url(${props => props.image});
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
     margin: 1.25rem auto;
-    width: 90%;
+    width: 85%;
     overflow: hidden;
     display: flex;
+    padding-bottom: 10%;
 
-    img {
-        max-width: 100%;
-        margin: auto;
-        object-fit: cover;
-    }
+    :after {
+        content: "";
+        display: block;
+        padding-bottom: 80%;
+      }
 
     @media only screen and (max-width: 768px) {
         margin: 1.25rem auto;
         width: 90%;
-
-        img {
-            object-fit: cover;
-        }
+        height: 13rem;
     }
 `;
 
@@ -82,7 +88,7 @@ const ArticleCard = ({ article, hideImage }) => {
     return (
         <Card>
             <a href={article.article_link}>
-                <Image> {!hideImage &&<img alt='article image' src={article.image_url} /> }</Image>
+                <Image image={article.image_url}></Image>
                 <Title>{article.article_title}</Title>
                 <Name>{article.article_authors}</Name>
             </a>

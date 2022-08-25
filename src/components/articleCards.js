@@ -10,7 +10,15 @@ const Articles = styled.div`
     align-items: center;
     background-image: url("https://summer-fellowship-2022.s3.amazonaws.com/SectionStrip.png");
     background-size: cover;
-    padding: 3rem;
+    padding: 3rem 5rem;
+    margin: 5rem 0rem;
+
+    @media only screen and (max-width: 1200px) {
+        padding: 3rem 2rem;
+    }
+    @media only screen and (max-width: 1000px) {
+        padding: 3rem 0rem;
+    }
 `;
 
 const ArticleCards = ({article1, article2, article3}) => (

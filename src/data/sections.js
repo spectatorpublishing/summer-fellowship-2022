@@ -31,9 +31,5 @@ export const sections = [
     {
         title: "Illustrations",
         url: "/illo",
-    },
-    {
-        title: "Credits",
-        url: "/#credits",
-    },
+    }
 ];

@@ -12,8 +12,6 @@ import { HashLink } from 'react-router-hash-link';
 import { NavHashLink } from 'react-router-hash-link';
 
 const Wrapper = styled.div`
-    position: sticky;
-    top: 0rem;
     margin: 0rem;
     padding: 1rem 0rem;
     z-index: 99;

@@ -42,8 +42,8 @@ export const credits = {
           "title": "Head of Product"
         },
         {
-          "staff_name": "HeeSoo Park",
-          "title": "Product Designer"
+          "staff_name": "Muchen Guo",
+          "title": "Deputy Product Manager"
         }
       ],
     "University News": [

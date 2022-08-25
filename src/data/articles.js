@@ -202,7 +202,7 @@ export const sports_articles = [
 export const illustrations = [
     {
         image_url: "https://summer-fellowship-2022.s3.amazonaws.com/mainImage.jpeg",
-        article_authors: "Ainhoa Petri-Hidalgo and Yingjie Wang",
+        article_authors: "Ainhoa Petri-Hidalgo, Ena Selman-Housein, and Yingjie Wang",
         article_link: "https://summerfellowship2022.columbiaspectator.com/"
     },
     {
